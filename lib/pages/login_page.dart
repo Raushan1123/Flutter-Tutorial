@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/utils/Constants.dart';
 import '../bg_image.dart';
 import 'home_page.dart';
 
@@ -62,7 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                                   MaterialPageRoute(
                                       builder: (context) => HomePage()));
 
-                             // Navigator.pushNamed(context, "/home");
+                              Constants.prefs.setBool("loggedIn", true);
+                              Navigator.pushReplacementNamed(context, "/home");
                             },
                             child: Text("Sign In"),
                             color: Colors.orange,
@@ -79,3 +81,4 @@ class _LoginPageState extends State<LoginPage> {
         ));
   }
 }
+
